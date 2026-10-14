@@ -1,0 +1,308 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Gabriel & Rayane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&family=Caveat:wght@500;700&display=swap">
+<style>
+/* Layout: uma coluna de celular (máx 430px), como um álbum de fotos rolando; seções separadas por "fitas" de data */
+:root{
+  --paper:#FBF0F1; --card:#FFFFFF; --ink:#2A1418; --muted:#7A5A60;
+  --cherry:#B3123A; --blush:#F4C9D1; --line:#EBD3D8; --stage:#EFE0E3;
+  --f-display:"Gloock", Georgia, serif;
+  --f-body:"Figtree", system-ui, -apple-system, sans-serif;
+  --f-hand:"Caveat", "Segoe Print", cursive;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#1E1216; --card:#2A1A1F; --ink:#F8E8EB; --muted:#C29CA5;
+  --cherry:#F0587A; --blush:#5A2633; --line:#3E262D; --stage:#140B0E; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#1E1216; --card:#2A1A1F; --ink:#F8E8EB; --muted:#C29CA5;
+  --cherry:#F0587A; --blush:#5A2633; --line:#3E262D; --stage:#140B0E; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--stage);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;padding-inline:0}
+.phone{max-width:430px;margin:0 auto;background:var(--paper);min-height:100%;overflow:hidden;position:relative}
+@media (min-width:500px){.phone{margin-block:24px;border-radius:36px;box-shadow:0 30px 80px -30px rgba(80,10,30,.35);border:1px solid var(--line)}}
+section{padding:40px 20px;display:flex;flex-direction:column;gap:18px}
+h1,h2{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;line-height:1.05}
+h2{font-size:2rem}
+p{margin:0}
+.tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cherry);font-weight:600}
+.hand{font-family:var(--f-hand)}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--cherry);outline-offset:3px}
+
+/* Hero */
+.hero{padding-top:56px;padding-bottom:28px;text-align:left;position:relative}
+.hero .date{font-family:var(--f-hand);font-size:1.6rem;color:var(--cherry);transform:rotate(-4deg);display:inline-block}
+.hero h1{font-size:3.6rem}
+.hero h1 .amp{color:var(--cherry);font-style:italic}
+.hero .sub{color:var(--muted);max-width:30ch}
+.big1{position:absolute;right:-18px;top:30px;font-family:var(--f-display);font-size:13rem;line-height:1;color:var(--blush);z-index:0;pointer-events:none}
+.hero>*{position:relative;z-index:1}
+
+/* Contador */
+.counter{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
+.grid4 b{display:block;font-family:var(--f-display);font-weight:400;font-size:1.9rem;font-variant-numeric:tabular-nums}
+.grid4 span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.until{font-family:var(--f-hand);font-size:1.5rem;color:var(--cherry);text-align:center}
+
+/* Música */
+.player{display:flex;align-items:center;gap:18px;background:var(--ink);color:var(--paper);border-radius:22px;padding:18px}
+.vinyl{flex:none;width:96px;height:96px;border-radius:50%;background:
+ radial-gradient(circle,var(--cherry) 0 22%,#111 23% 25%,transparent 26%),
+ repeating-radial-gradient(circle,#161616 0 2px,#262626 3px 4px);display:grid;place-items:center}
+.vinyl.spin{animation:spin 3.2s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pinfo{min-width:0;display:flex;flex-direction:column;gap:6px}
+.pinfo .song{font-family:var(--f-display);font-size:1.25rem;line-height:1.15}
+.pinfo .artist{font-size:.85rem;opacity:.7}
+.prow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.play{background:var(--cherry);color:#fff;border:0;border-radius:999px;padding:8px 16px;font-weight:600}
+.prow a{color:inherit;font-size:.85rem;opacity:.8}
+.note{font-size:.85rem;color:var(--muted)}
+
+/* Fotos */
+.polas{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
+.pola{background:var(--card);padding:8px 8px 4px;border-radius:4px;box-shadow:0 8px 20px -10px rgba(60,10,25,.35);display:flex;flex-direction:column;gap:4px;transition:transform .3s}
+.pola:nth-child(odd){transform:rotate(-2.5deg)}
+.pola:nth-child(even){transform:rotate(2deg) translateY(10px)}
+.pola .ph{aspect-ratio:1;max-width:100%;border-radius:2px;background:linear-gradient(135deg,var(--blush),var(--paper));display:grid;place-items:center;color:var(--cherry);font-size:.75rem;text-align:center;padding:8px;overflow:hidden}
+.pola .ph img{width:100%;height:100%;object-fit:cover}
+.pola p{font-family:var(--f-hand);font-size:1.2rem;text-align:center;line-height:1.1;padding-bottom:4px}
+
+/* Linha do tempo */
+.tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px dashed var(--blush);display:flex;flex-direction:column;gap:22px}
+.tl li{position:relative}
+.tl li::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--cherry);border:3px solid var(--paper)}
+.tl .when{font-family:var(--f-hand);font-size:1.3rem;color:var(--cherry);line-height:1}
+.tl h3{margin:2px 0 2px;font-size:1.05rem}
+.tl p{color:var(--muted);font-size:.95rem}
+
+/* Motivos */
+.reasons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.r{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:14px;min-height:96px;text-align:left;color:var(--ink);display:flex;flex-direction:column;justify-content:space-between;gap:6px}
+.r .n{font-family:var(--f-display);color:var(--cherry);font-size:1.4rem}
+.r .t{font-size:.9rem}
+.r .hint{font-size:.75rem;color:var(--muted)}
+.r[aria-pressed="true"]{background:var(--cherry);color:#fff;border-color:var(--cherry)}
+.r[aria-pressed="true"] .n{color:#fff}
+
+/* Carta */
+.env{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0;overflow:hidden;text-align:left;color:var(--ink);width:100%}
+.env .flap{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:var(--blush)}
+.env .flap span{font-family:var(--f-hand);font-size:1.5rem}
+.seal{width:40px;height:40px;border-radius:50%;background:var(--cherry);color:#fff;display:grid;place-items:center;font-family:var(--f-display);font-size:1.1rem}
+.letter{padding:22px 22px 26px;font-family:var(--f-hand);font-size:1.45rem;line-height:1.3;display:flex;flex-direction:column;gap:12px}
+.letter .sign{text-align:right;color:var(--cherry)}
+
+/* Final */
+.final{text-align:center;align-items:center;padding-bottom:56px}
+.final h2{font-size:2.6rem}
+.yes{background:var(--cherry);color:#fff;border:0;border-radius:999px;padding:14px 28px;font-size:1.05rem;font-weight:600;box-shadow:0 10px 24px -10px var(--cherry)}
+.heart{position:fixed;pointer-events:none;font-size:22px;color:var(--cherry);animation:up 2.6s ease-out forwards;z-index:9}
+@keyframes up{to{transform:translateY(-70vh) rotate(25deg);opacity:0}}
+footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
+@media (prefers-reduced-motion:reduce){.vinyl.spin{animation:none}.heart{display:none}.pola{transition:none}}
+</style>
+
+<div class="phone">
+
+  <header class="hero">
+    <div class="big1" aria-hidden="true">1</div>
+    <span class="date">18 · 10 · 2026</span>
+    <h1>Gabriel <span class="amp">&amp;</span><br>Rayane</h1>
+    <p class="sub">Um ano inteiro de nós dois. Fiz esse cantinho só pra você, meu amor.</p>
+  </header>
+
+  <section aria-labelledby="t-cont" style="padding-top:8px">
+    <span class="tag">Desde 18 de outubro de 2025</span>
+    <h2 id="t-cont">Juntos há</h2>
+    <div class="counter">
+      <div class="grid4">
+        <div><b id="d">0</b><span>dias</span></div>
+        <div><b id="h">0</b><span>horas</span></div>
+        <div><b id="m">0</b><span>min</span></div>
+        <div><b id="s">0</b><span>seg</span></div>
+      </div>
+      <p class="until" id="until"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-mus">
+    <span class="tag">Trilha sonora</span>
+    <h2 id="t-mus">A nossa música</h2>
+    <div class="player">
+      <div class="vinyl" id="vinyl" aria-hidden="true"></div>
+      <div class="pinfo">
+        <span class="song" id="song">Nome da nossa música</span>
+        <span class="artist" id="artist">Artista</span>
+        <div class="prow">
+          <button class="play" id="play" aria-pressed="false">▶ Tocar</button>
+          <a id="spotify" href="https://open.spotify.com" target="_blank" rel="noopener">Ouvir no Spotify ↗</a>
+        </div>
+      </div>
+    </div>
+    <p class="note">Toda vez que ela toca eu lembro de você.</p>
+    <audio id="audio" preload="none"></audio>
+  </section>
+
+  <section aria-labelledby="t-fot">
+    <span class="tag">Álbum</span>
+    <h2 id="t-fot">Nossos momentos</h2>
+    <div class="polas">
+      <figure class="pola" style="margin:0"><div class="ph">foto 1</div><p>nosso primeiro encontro</p></figure>
+      <figure class="pola" style="margin:0"><div class="ph">foto 2</div><p>aquele dia perfeito</p></figure>
+      <figure class="pola" style="margin:0"><div class="ph">foto 3</div><p>nossa primeira viagem</p></figure>
+      <figure class="pola" style="margin:0"><div class="ph">foto 4</div><p>meu lugar favorito: do seu lado</p></figure>
+      <figure class="pola" style="margin:0"><div class="ph">foto 5</div><p>rindo de tudo</p></figure>
+      <figure class="pola" style="margin:0"><div class="ph">foto 6</div><p>e muitas mais por vir</p></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-hist">
+    <span class="tag">Nossa história</span>
+    <h2 id="t-hist">Como chegamos até aqui</h2>
+    <ol class="tl">
+      <li><span class="when">o começo</span><h3>A primeira conversa</h3><p>Onde tudo começou, sem a gente imaginar o que vinha pela frente.</p></li>
+      <li><span class="when">18 out 2025</span><h3>O dia em que viramos "nós"</h3><p>A data que agora a gente comemora todo mês.</p></li>
+      <li><span class="when">no caminho</span><h3>Um momento marcante</h3><p>Aquele dia que eu nunca vou esquecer.</p></li>
+      <li><span class="when">18 out 2026</span><h3>Um ano!</h3><p>E é só o primeiro de muitos.</p></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="t-mot">
+    <span class="tag">Toque nos cartões</span>
+    <h2 id="t-mot">Motivos pelos quais eu te amo</h2>
+    <div class="reasons" id="reasons"></div>
+  </section>
+
+  <section aria-labelledby="t-carta">
+    <span class="tag">Pra você ler com calma</span>
+    <h2 id="t-carta">Uma carta</h2>
+    <button class="env" id="env" aria-expanded="false" aria-controls="letter">
+      <div class="flap"><span>Para: Rayane</span><div class="seal">G</div></div>
+      <div class="letter" id="letter" hidden>
+        <p>Meu amor,</p>
+        <p>Faz um ano que você entrou na minha vida e mudou tudo pra melhor. Obrigado por cada risada, cada abraço e cada dia que a gente divide.</p>
+        <p>Eu escolheria você de novo, todos os dias.</p>
+        <p>Feliz um ano de nós.</p>
+        <p class="sign">Com todo o meu amor,<br>Gabriel</p>
+      </div>
+    </button>
+  </section>
+
+  <section class="final" aria-labelledby="t-fim">
+    <span class="tag">Uma última pergunta</span>
+    <h2 id="t-fim">Topa mais um ano comigo?</h2>
+    <button class="yes" id="yes">Sim, mil vezes ♥</button>
+    <p class="hand" id="yesmsg" style="font-size:1.6rem;color:var(--cherry)" hidden>Eu sabia. Te amo, Rayane.</p>
+  </section>
+
+  <footer>feito com amor por Gabriel · 18/10/2026</footer>
+</div>
+
+<script>
+// ===== Edite aqui =====
+const START = new Date(2025, 9, 18, 0, 0, 0);   // 18/10/2025
+const ANNIV = new Date(2026, 9, 18, 0, 0, 0);   // 18/10/2026
+const MUSICA = { nome:"Nome da nossa música", artista:"Artista", spotify:"https://open.spotify.com", arquivo:"" };
+const MOTIVOS = [
+  "Seu sorriso, que melhora qualquer dia",
+  "O jeito que você cuida de mim",
+  "Nossas risadas sem motivo",
+  "Seu abraço, meu lugar favorito",
+  "Você acredita em mim sempre",
+  "Porque com você tudo é mais leve"
+];
+// ======================
+
+document.getElementById('song').textContent = MUSICA.nome;
+document.getElementById('artist').textContent = MUSICA.artista;
+document.getElementById('spotify').href = MUSICA.spotify;
+
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const now = new Date();
+  let diff = Math.max(0, now - START) / 1000;
+  const d = Math.floor(diff/86400); diff -= d*86400;
+  const h = Math.floor(diff/3600); diff -= h*3600;
+  const m = Math.floor(diff/60); const s = Math.floor(diff - m*60);
+  document.getElementById('d').textContent = d;
+  document.getElementById('h').textContent = pad(h);
+  document.getElementById('m').textContent = pad(m);
+  document.getElementById('s').textContent = pad(s);
+  const left = Math.ceil((ANNIV - now)/86400000);
+  document.getElementById('until').textContent =
+    left > 1 ? `faltam ${left} dias pro nosso 1 ano` :
+    left === 1 ? 'amanhã é o nosso dia!' :
+    left === 0 || (now - ANNIV) < 86400000 ? 'hoje é o nosso dia ♥' : 'o primeiro de muitos anos ♥';
+}
+tick(); setInterval(tick, 1000);
+
+// Música: toca o arquivo se houver; senão, uma caixinha de música
+const audio = document.getElementById('audio'), playBtn = document.getElementById('play'), vinyl = document.getElementById('vinyl');
+if (MUSICA.arquivo) audio.src = MUSICA.arquivo;
+let ctx, boxTimer, playing = false;
+function musicBox(){
+  ctx = ctx || new (window.AudioContext||window.webkitAudioContext)();
+  const notes=[659,784,988,880,784,659,587,659,784,659,523,587];
+  let i=0;
+  const step=()=>{
+    const t=ctx.currentTime, o=ctx.createOscillator(), g=ctx.createGain();
+    o.type='sine'; o.frequency.value=notes[i++%notes.length];
+    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(.18,t+.02); g.gain.exponentialRampToValueAtTime(.0001,t+1.1);
+    o.connect(g).connect(ctx.destination); o.start(t); o.stop(t+1.2);
+  };
+  step(); boxTimer=setInterval(step,420);
+}
+function setPlaying(on){
+  playing=on; vinyl.classList.toggle('spin',on);
+  playBtn.textContent = on ? '❚❚ Pausar' : '▶ Tocar';
+  playBtn.setAttribute('aria-pressed',on);
+}
+playBtn.addEventListener('click',()=>{
+  if(!playing){
+    if(MUSICA.arquivo){ audio.play().catch(()=>{}); } else { musicBox(); }
+    setPlaying(true);
+  } else {
+    if(MUSICA.arquivo) audio.pause(); clearInterval(boxTimer);
+    setPlaying(false);
+  }
+});
+audio.addEventListener('ended',()=>setPlaying(false));
+
+// Motivos
+const box = document.getElementById('reasons');
+MOTIVOS.forEach((t,i)=>{
+  const b=document.createElement('button'); b.className='r'; b.setAttribute('aria-pressed','false');
+  b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${'♥ ♥ ♥'}</span><span class="hint">toque pra ver</span>`;
+  b.addEventListener('click',()=>{
+    const on=b.getAttribute('aria-pressed')!=='true';
+    b.setAttribute('aria-pressed',on);
+    b.querySelector('.t').textContent = on ? t : '♥ ♥ ♥';
+    b.querySelector('.hint').textContent = on ? '' : 'toque pra ver';
+  });
+  box.appendChild(b);
+});
+
+// Carta
+const env=document.getElementById('env'), letter=document.getElementById('letter');
+env.addEventListener('click',()=>{ letter.hidden=!letter.hidden; env.setAttribute('aria-expanded',!letter.hidden); });
+
+// Final
+document.getElementById('yes').addEventListener('click',e=>{
+  document.getElementById('yesmsg').hidden=false;
+  const r=e.currentTarget.getBoundingClientRect();
+  for(let i=0;i<24;i++){
+    const h=document.createElement('span'); h.className='heart'; h.textContent='♥';
+    h.style.left=(r.left+r.width/2+(Math.random()-.5)*240)+'px';
+    h.style.top=(r.top+(Math.random()-.5)*40)+'px';
+    h.style.animationDelay=(Math.random()*.6)+'s';
+    h.style.fontSize=(14+Math.random()*20)+'px';
+    document.body.appendChild(h); setTimeout(()=>h.remove(),3400);
+  }
+});
+</script>
+
+</body></html>
