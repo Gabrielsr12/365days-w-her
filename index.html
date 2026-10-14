@@ -206,7 +206,7 @@ footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
 // ===== Edite aqui =====
 const START = new Date(2025, 9, 18, 0, 0, 0);   // 18/10/2025
 const ANNIV = new Date(2026, 9, 18, 0, 0, 0);   // 18/10/2026
-const MUSICA = { nome:"Nome da nossa música", artista:"Artista", spotify:"https://open.spotify.com", arquivo:"" };
+const MUSICA = { nome:"Sunshine", artista:"Delacruz", spotify:"https://open.spotify.com/search/Delacruz%20Sunshine", arquivo:"musica.mp3" };
 const MOTIVOS = [
   "Seu sorriso, que melhora qualquer dia",
   "O jeito que você cuida de mim",
@@ -263,7 +263,7 @@ function setPlaying(on){
 }
 playBtn.addEventListener('click',()=>{
   if(!playing){
-    if(MUSICA.arquivo){ audio.play().catch(()=>{}); } else { musicBox(); }
+    if(MUSICA.arquivo){ audio.play().catch(()=>{ musicBox(); }); } else { musicBox(); }
     setPlaying(true);
   } else {
     if(MUSICA.arquivo) audio.pause(); clearInterval(boxTimer);
