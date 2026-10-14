@@ -32,13 +32,17 @@ button{font:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--cherry);outline-offset:3px}
 
 /* Hero */
-.hero{padding-top:56px;padding-bottom:28px;text-align:left;position:relative}
+.hero{padding:56px 20px 28px;text-align:left;position:relative}
 .hero .date{font-family:var(--f-hand);font-size:1.6rem;color:var(--cherry);transform:rotate(-4deg);display:inline-block}
 .hero h1{font-size:3.6rem}
 .hero h1 .amp{color:var(--cherry);font-style:italic}
 .hero .sub{color:var(--muted);max-width:30ch}
 .big1{position:absolute;right:-18px;top:30px;font-family:var(--f-display);font-size:13rem;line-height:1;color:var(--blush);z-index:0;pointer-events:none}
 .hero>*{position:relative;z-index:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url(fotos/foto7.jpg) center 22%/cover no-repeat;opacity:.27;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 20%,transparent 92%);
+  mask-image:linear-gradient(to bottom,#000 0%,#000 20%,transparent 92%)}
 
 /* Contador */
 .counter{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:14px}
@@ -67,7 +71,6 @@ button{font:inherit;cursor:pointer}
 .pola{margin:0;background:#fff;padding:8px 8px 30px;border-radius:3px;box-shadow:0 8px 20px -10px rgba(60,10,25,.4);transition:transform .3s}
 .pola:nth-child(odd){transform:rotate(-2.5deg)}
 .pola:nth-child(even){transform:rotate(2deg) translateY(10px)}
-.pola:last-child{grid-column:1/-1;justify-self:center;width:calc(50% - 7px);transform:rotate(-1.5deg)}
 .pola img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:1px;background:var(--blush)}
 
 /* Linha do tempo */
@@ -156,7 +159,6 @@ footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
       <figure class="pola"><img src="fotos/foto4.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
       <figure class="pola"><img src="fotos/foto5.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
       <figure class="pola"><img src="fotos/foto6.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
-      <figure class="pola"><img src="fotos/foto7.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
     </div>
   </section>
 
