@@ -64,12 +64,11 @@ button{font:inherit;cursor:pointer}
 
 /* Fotos */
 .polas{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
-.pola{background:var(--card);padding:8px 8px 4px;border-radius:4px;box-shadow:0 8px 20px -10px rgba(60,10,25,.35);display:flex;flex-direction:column;gap:4px;transition:transform .3s}
+.pola{margin:0;background:#fff;padding:8px 8px 30px;border-radius:3px;box-shadow:0 8px 20px -10px rgba(60,10,25,.4);transition:transform .3s}
 .pola:nth-child(odd){transform:rotate(-2.5deg)}
 .pola:nth-child(even){transform:rotate(2deg) translateY(10px)}
-.pola .ph{aspect-ratio:1;max-width:100%;border-radius:2px;background:linear-gradient(135deg,var(--blush),var(--paper));display:grid;place-items:center;color:var(--cherry);font-size:.75rem;text-align:center;padding:8px;overflow:hidden}
-.pola .ph img{width:100%;height:100%;object-fit:cover}
-.pola p{font-family:var(--f-hand);font-size:1.2rem;text-align:center;line-height:1.1;padding-bottom:4px}
+.pola:last-child{grid-column:1/-1;justify-self:center;width:calc(50% - 7px);transform:rotate(-1.5deg)}
+.pola img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:1px;background:var(--blush)}
 
 /* Linha do tempo */
 .tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px dashed var(--blush);display:flex;flex-direction:column;gap:22px}
@@ -151,12 +150,13 @@ footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
     <span class="tag">Álbum</span>
     <h2 id="t-fot">Nossos momentos</h2>
     <div class="polas">
-      <figure class="pola" style="margin:0"><div class="ph">foto 1</div><p>nosso primeiro encontro</p></figure>
-      <figure class="pola" style="margin:0"><div class="ph">foto 2</div><p>aquele dia perfeito</p></figure>
-      <figure class="pola" style="margin:0"><div class="ph">foto 3</div><p>nossa primeira viagem</p></figure>
-      <figure class="pola" style="margin:0"><div class="ph">foto 4</div><p>meu lugar favorito: do seu lado</p></figure>
-      <figure class="pola" style="margin:0"><div class="ph">foto 5</div><p>rindo de tudo</p></figure>
-      <figure class="pola" style="margin:0"><div class="ph">foto 6</div><p>e muitas mais por vir</p></figure>
+      <figure class="pola"><img src="fotos/foto1.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto2.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto3.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto4.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto5.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto6.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
+      <figure class="pola"><img src="fotos/foto7.jpg" alt="Gabriel e Rayane" loading="lazy"></figure>
     </div>
   </section>
 
