@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Gabriel & Rayane ❤️‍🔥</title>
+<title>Gabriel & Rayane</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&family=Caveat:wght@500;700&display=swap">
 <style>
@@ -30,13 +30,6 @@ p{margin:0}
 .hand{font-family:var(--f-hand)}
 button{font:inherit;cursor:pointer}
 :focus-visible{outline:2px solid var(--cherry);outline-offset:3px}
-
-/* Emoji do casal */
-.tag::after{content:" ❤️‍🔥";letter-spacing:0}
-section h2::after{content:"❤️‍🔥";font-size:.55em;margin-left:.3em;vertical-align:.25em}
-.ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:1}
-.ambient span{position:absolute;bottom:-40px;opacity:0;animation:drift linear infinite}
-@keyframes drift{0%{transform:translateY(0) rotate(-8deg);opacity:0}10%{opacity:.45}85%{opacity:.35}100%{transform:translateY(-110vh) rotate(12deg);opacity:0}}
 
 /* Hero */
 .hero{padding:56px 20px 28px;text-align:left;position:relative}
@@ -75,16 +68,15 @@ section h2::after{content:"❤️‍🔥";font-size:.55em;margin-left:.3em;verti
 
 /* Fotos */
 .polas{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}
-.pola{position:relative;margin:0;background:#fff;padding:8px 8px 30px;border-radius:3px;box-shadow:0 8px 20px -10px rgba(60,10,25,.4);transition:transform .3s}
+.pola{margin:0;background:#fff;padding:8px 8px 30px;border-radius:3px;box-shadow:0 8px 20px -10px rgba(60,10,25,.4);transition:transform .3s}
 .pola:nth-child(odd){transform:rotate(-2.5deg)}
 .pola:nth-child(even){transform:rotate(2deg) translateY(10px)}
-.pola::after{content:"❤️‍🔥";position:absolute;left:0;right:0;bottom:5px;text-align:center;font-size:18px;line-height:1}
 .pola img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 30%;border-radius:1px;background:var(--blush)}
 
 /* Linha do tempo */
 .tl{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px dashed var(--blush);display:flex;flex-direction:column;gap:22px}
 .tl li{position:relative}
-.tl li::before{content:"❤️‍🔥";position:absolute;left:-33px;top:2px;font-size:18px;line-height:1;background:var(--paper);padding:2px 0}
+.tl li::before{content:"";position:absolute;left:-30px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--cherry);border:3px solid var(--paper)}
 .tl .when{font-family:var(--f-hand);font-size:1.3rem;color:var(--cherry);line-height:1}
 .tl h3{margin:2px 0 2px;font-size:1.05rem}
 .tl p{color:var(--muted);font-size:.95rem}
@@ -110,20 +102,19 @@ section h2::after{content:"❤️‍🔥";font-size:.55em;margin-left:.3em;verti
 .final{text-align:center;align-items:center;padding-bottom:56px}
 .final h2{font-size:2.6rem}
 .yes{background:var(--cherry);color:#fff;border:0;border-radius:999px;padding:14px 28px;font-size:1.05rem;font-weight:600;box-shadow:0 10px 24px -10px var(--cherry)}
-.heart{position:fixed;pointer-events:none;font-size:22px;animation:up 2.6s ease-out forwards;z-index:9}
+.heart{position:fixed;pointer-events:none;font-size:22px;color:var(--cherry);animation:up 2.6s ease-out forwards;z-index:9}
 @keyframes up{to{transform:translateY(-70vh) rotate(25deg);opacity:0}}
 footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
 @media (prefers-reduced-motion:reduce){.vinyl.spin{animation:none}.heart{display:none}.pola{transition:none}}
 </style>
 
-<div class="ambient" id="ambient" aria-hidden="true"></div>
 <div class="phone">
 
   <header class="hero">
     <div class="big1" aria-hidden="true">1</div>
-    <span class="date">18 · 10 · 2026 ❤️‍🔥</span>
+    <span class="date">18 · 10 · 2026</span>
     <h1>Gabriel <span class="amp">&amp;</span><br>Rayane</h1>
-    <p class="sub">Um ano inteiro de nós dois. Fiz esse cantinho só pra você, meu amor ❤️‍🔥</p>
+    <p class="sub">Um ano inteiro de nós dois. Fiz esse cantinho só pra você, meu amor.</p>
   </header>
 
   <section aria-labelledby="t-cont" style="padding-top:8px">
@@ -154,7 +145,7 @@ footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
         </div>
       </div>
     </div>
-    <p class="note">Toda vez que ela toca eu lembro de você ❤️‍🔥</p>
+    <p class="note">Toda vez que ela toca eu lembro de você.</p>
     <audio id="audio" preload="none"></audio>
   </section>
 
@@ -209,11 +200,11 @@ footer{text-align:center;padding:0 20px 30px;color:var(--muted);font-size:.8rem}
   <section class="final" aria-labelledby="t-fim">
     <span class="tag">Uma última pergunta</span>
     <h2 id="t-fim">Topa mais um ano comigo?</h2>
-    <button class="yes" id="yes">Sim, mil vezes ❤️‍🔥</button>
-    <p class="hand" id="yesmsg" style="font-size:1.6rem;color:var(--cherry)" hidden>Eu sabia. Te amo, Rayane ❤️‍🔥</p>
+    <button class="yes" id="yes">Sim, mil vezes ♥</button>
+    <p class="hand" id="yesmsg" style="font-size:1.6rem;color:var(--cherry)" hidden>Eu sabia. Te amo, Rayane.</p>
   </section>
 
-  <footer>feito com ❤️‍🔥 por Gabriel · 18/10/2026</footer>
+  <footer>feito com amor por Gabriel · 18/10/2026</footer>
 </div>
 
 <script>
@@ -248,9 +239,9 @@ function tick(){
   document.getElementById('s').textContent = pad(s);
   const left = Math.ceil((ANNIV - now)/86400000);
   document.getElementById('until').textContent =
-    left > 1 ? `faltam ${left} dias pro nosso 1 ano ❤️‍🔥` :
-    left === 1 ? 'amanhã é o nosso dia ❤️‍🔥' :
-    left === 0 || (now - ANNIV) < 86400000 ? 'hoje é o nosso dia ❤️‍🔥' : 'o primeiro de muitos anos ❤️‍🔥';
+    left > 1 ? `faltam ${left} dias pro nosso 1 ano` :
+    left === 1 ? 'amanhã é o nosso dia!' :
+    left === 0 || (now - ANNIV) < 86400000 ? 'hoje é o nosso dia ♥' : 'o primeiro de muitos anos ♥';
 }
 tick(); setInterval(tick, 1000);
 
@@ -290,11 +281,11 @@ audio.addEventListener('ended',()=>setPlaying(false));
 const box = document.getElementById('reasons');
 MOTIVOS.forEach((t,i)=>{
   const b=document.createElement('button'); b.className='r'; b.setAttribute('aria-pressed','false');
-  b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">❤️‍🔥 ❤️‍🔥 ❤️‍🔥</span><span class="hint">toque pra ver</span>`;
+  b.innerHTML=`<span class="n">${String(i+1).padStart(2,'0')}</span><span class="t">${'♥ ♥ ♥'}</span><span class="hint">toque pra ver</span>`;
   b.addEventListener('click',()=>{
     const on=b.getAttribute('aria-pressed')!=='true';
     b.setAttribute('aria-pressed',on);
-    b.querySelector('.t').textContent = on ? t : '❤️‍🔥 ❤️‍🔥 ❤️‍🔥';
+    b.querySelector('.t').textContent = on ? t : '♥ ♥ ♥';
     b.querySelector('.hint').textContent = on ? '' : 'toque pra ver';
   });
   box.appendChild(b);
@@ -304,25 +295,12 @@ MOTIVOS.forEach((t,i)=>{
 const env=document.getElementById('env'), letter=document.getElementById('letter');
 env.addEventListener('click',()=>{ letter.hidden=!letter.hidden; env.setAttribute('aria-expanded',!letter.hidden); });
 
-// Emojis flutuando ao fundo
-if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
-  const amb=document.getElementById('ambient');
-  for(let i=0;i<9;i++){
-    const e=document.createElement('span'); e.textContent='❤️‍🔥';
-    e.style.left=(5+Math.random()*90)+'%';
-    e.style.fontSize=(14+Math.random()*14)+'px';
-    e.style.animationDuration=(14+Math.random()*12)+'s';
-    e.style.animationDelay=(-Math.random()*20)+'s';
-    amb.appendChild(e);
-  }
-}
-
 // Final
 document.getElementById('yes').addEventListener('click',e=>{
   document.getElementById('yesmsg').hidden=false;
   const r=e.currentTarget.getBoundingClientRect();
-  for(let i=0;i<40;i++){
-    const h=document.createElement('span'); h.className='heart'; h.textContent='❤️‍🔥';
+  for(let i=0;i<24;i++){
+    const h=document.createElement('span'); h.className='heart'; h.textContent='♥';
     h.style.left=(r.left+r.width/2+(Math.random()-.5)*240)+'px';
     h.style.top=(r.top+(Math.random()-.5)*40)+'px';
     h.style.animationDelay=(Math.random()*.6)+'s';
